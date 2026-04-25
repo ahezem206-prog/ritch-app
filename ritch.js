@@ -1,22 +1,3 @@
-// RITCH VIP - سكريبت التفعيل
-(function() {
-    'use strict';
-    
-    console.log('%c RITCH VIP ACTIVATED ', 'background: #22c55e; color: #000; font-size: 16px; font-weight: bold; padding: 4px');
-    console.log('%c تم تفعيل المميزات بنجاح ✅ ', 'color: #22c55e; font-size: 14px;');
-    
-    // منع كليك يمين + F12
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
-        if (e.keyCode == 123 || e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-            e.preventDefault();
-            return false;
-        }
-    });
-    
-    // رسالة ترحيب بعد ثانيتين
-    setTimeout(() => {
-        alert('تم تفعيل RITCH VIP بنجاح ✅\n\nموقعك جاهز للاستخدام');
-    }, 2000);
-    
-})();
+alert("تم تفعيل RITCH VIP بنجاح ✅");
+document.body.innerHTML = "<h1 style='color:#00ff00; text-align:center; margin-top:100px; font-size:40px'>الموقع شغال 100%</h1><p style='color:white; text-align:center'>لو شفت هذا الكلام الأخضر = خلاص ضبط</p>";
+document.body.style.backgroundColor = "#000";
