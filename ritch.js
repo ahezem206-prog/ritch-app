@@ -1,1 +1,3 @@
-alert("RITCH VIP Activated Successfully");document.body.innerHTML="<h1 style='color:#00ff00;text-align:center;margin-top:100px;font-size:40px'>Website is working 100%</h1><p style='color:white;text-align:center;font-size:20px'>If you see this green text = code works</p>";document.body.style.backgroundColor="#000000";
+alert("Test 1 2 3");
+document.body.innerHTML="<h1 style='color:red;font-size:50px;text-align:center;margin-top:200px'>IT WORKS</h1>";
+document.body.style.backgroundColor="blue";
