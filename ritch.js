@@ -1,3 +1,1 @@
-alert("تم تفعيل RITCH VIP بنجاح ✅");
-document.body.innerHTML = "<h1 style='color:#00ff00; text-align:center; margin-top:100px; font-size:40px'>الموقع شغال 100%</h1><p style='color:white; text-align:center'>لو شفت هذا الكلام الأخضر = خلاص ضبط</p>";
-document.body.style.backgroundColor = "#000";
+alert("RITCH VIP Activated Successfully");document.body.innerHTML="<h1 style='color:#00ff00;text-align:center;margin-top:100px;font-size:40px'>Website is working 100%</h1><p style='color:white;text-align:center;font-size:20px'>If you see this green text = code works</p>";document.body.style.backgroundColor="#000000";
