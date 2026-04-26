@@ -1,6 +1,7 @@
 const USERS = {
   "admin": "123456",
   "ritch": "vip2026",
+  "Abood@gmail.com": "Ritch2026",
   "user": "pass123"
 };
 
@@ -9,7 +10,7 @@ function showLogin() {
     <div class="login-box">
       <h1>RITCH VIP</h1>
       <div id="error" class="error">Wrong username or password</div>
-      <input type="text" id="username" placeholder="Username">
+      <input type="text" id="username" placeholder="Username or Email">
       <input type="password" id="password" placeholder="Password">
       <button onclick="login()">Login</button>
       <p style="font-size:12px;margin-top:15px;opacity:0.6">Demo: admin / 123456</p>
@@ -21,7 +22,8 @@ function login() {
   const user = document.getElementById('username').value;
   const pass = document.getElementById('password').value;
   
-  if (USERS && USERS === pass) {
+  // هذا السطر الصح: نتأكد ان اليوزر موجود والباسوورد مطابقة
+  if (USERS && pass) {
     localStorage.setItem('logged_in', 'true');
     localStorage.setItem('user', user);
     showApp();
