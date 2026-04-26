@@ -4,51 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RITCH VIP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            margin: 0; 
-            font-family: Arial, sans-serif; 
-            background: #0f0f1e; 
+            font-family: 'Segoe UI', sans-serif; 
+            background: #0a0a15; 
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
         }
-        .login-box {
-            background: #1a1a2e;
+        .auth-box {
+            background: #15152b;
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 20px;
             border: 2px solid #667eea;
             text-align: center;
-            width: 300px;
+            width: 350px;
+            margin: 100px auto;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
         }
-        .login-box h1 { color: #FFD700; margin-bottom: 20px; }
-        .login-box input {
+        .auth-box h1 { color: #FFD700; margin-bottom: 20px; }
+        .auth-box input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             margin: 10px 0;
-            background: #0f0f1e;
-            border: 1px solid #667eea;
-            border-radius: 8px;
+            background: #0a0a15;
+            border: 2px solid #667eea;
+            border-radius: 10px;
             color: white;
             box-sizing: border-box;
         }
-        .login-box button {
+        .auth-box button {
             width: 100%;
-            padding: 12px;
-            background: #667eea;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
         }
         .error { color: #ff4444; display: none; margin: 10px 0; }
-        .app { padding: 20px; text-align: center; }
-        .app h1 { color: #FFD700; font-size: 3rem; }
-        .logout { background: #ff4444; padding: 10px 20px; border: none; border-radius: 8px; color: white; cursor: pointer; }
+        .dashboard { width: 100%; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logout-btn { 
+            background: #ff4444; 
+            padding: 8px 20px; 
+            border: none; 
+            border-radius: 8px; 
+            color: white; 
+            cursor: pointer; 
+            margin-left: 15px;
+        }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
+        .status {
+            background: #15152b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 30px;
+            border-left: 4px solid #00ff88;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { 
+            background: #15152b; 
+            border: 2px solid #667eea; 
+            border-radius: 15px; 
+            padding: 25px; 
+        }
+        .card h3 { color: #FFD700; margin-bottom: 15px; }
+        .signal-card .signal {
+            background: #0a0a15;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 3px solid #667eea;
+        }
+        .buy { color: #00ff88; font-weight: bold; }
+        .sell { color: #ff4444; font-weight: bold; }
+        .btn {
+            background: #667eea;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        iframe { border-radius: 10px; margin-top: 10px; }
+        @media (max-width: 768px) {
+            .header { flex-direction: column; gap: 10px; }
+            .grid { grid-template-columns: 1fr; }
+            .status { flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
