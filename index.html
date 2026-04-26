@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RITCH VIP</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #0f0f1e; 
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .login-box {
+            background: #1a1a2e;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #667eea;
+            text-align: center;
+            width: 300px;
+        }
+        .login-box h1 { color: #FFD700; margin-bottom: 20px; }
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #0f0f1e;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .error { color: #ff4444; display: none; margin: 10px 0; }
+        .app { padding: 20px; text-align: center; }
+        .app h1 { color: #FFD700; font-size: 3rem; }
+        .logout { background: #ff4444; padding: 10px 20px; border: none; border-radius: 8px; color: white; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <div id="root">Loading...</div>
+    <div id="app">Loading...</div>
     <script src="ritch.js"></script>
 </body>
 </html>
