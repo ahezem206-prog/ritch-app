@@ -1,19 +1,23 @@
 const USERS = {
   "admin": "123456",
-  "ritch": "vip2026",
   "Abood@gmail.com": "Ritch2026",
-  "user": "pass123"
+  "ritch": "vip2026"
 };
+
+// Demo videos - later we can make them dynamic with Firebase
+let VIDEOS = [
+  { title: "XAUUSD Analysis Today", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", date: "2026-04-25" },
+  { title: "BTCUSD Live Trade", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", date: "2026-04-24" }
+];
 
 function showLogin() {
   document.getElementById('app').innerHTML = `
-    <div class="login-box">
-      <h1>RITCH VIP</h1>
+    <div class="auth-box">
+      <h1><i class="fas fa-crown"></i> RITCH VIP</h1>
       <div id="error" class="error">Wrong username or password</div>
-      <input type="text" id="username" placeholder="Username or Email">
+      <input type="text" id="username" placeholder="Email or Username">
       <input type="password" id="password" placeholder="Password">
       <button onclick="login()">Login</button>
-      <p style="font-size:12px;margin-top:15px;opacity:0.6">Demo: admin / 123456</p>
     </div>
   `;
 }
@@ -21,8 +25,7 @@ function showLogin() {
 function login() {
   const user = document.getElementById('username').value;
   const pass = document.getElementById('password').value;
-  
-  // هذا السطر الصح: نتأكد ان اليوزر موجود والباسوورد مطابقة
+
   if (USERS && pass) {
     localStorage.setItem('logged_in', 'true');
     localStorage.setItem('user', user);
@@ -40,21 +43,27 @@ function logout() {
 
 function showApp() {
   const user = localStorage.getItem('user');
-  document.getElementById('app').innerHTML = `
-    <div class="app">
-      <h1>RITCH VIP</h1>
-      <h2>Welcome ${user} ✅</h2>
-      <p>Status: Online | Server: EU | Version: 3.0</p>
-      <br>
-      <button class="logout" onclick="logout()">Logout</button>
-    </div>
-  `;
-}
+  const isAdmin = user === 'admin' || user === 'Abood@gmail.com';
 
-setTimeout(function() {
-  if (localStorage.getItem('logged_in') === 'true') {
-    showApp();
-  } else {
-    showLogin();
-  }
-}, 500);
+  document.getElementById('app').innerHTML = `
+    <div class="dashboard">
+      <div class="header">
+        <h2><i class="fas fa-crown"></i> RITCH VIP</h2>
+        <div>
+          <span>${user}</span>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="status">
+          <span><i class="fas fa-circle" style="color:#00ff88"></i> LIVE</span>
+          <span>Server: EU-1</span>
+          <span>Win Rate: 89%</span>
+        </div>
+
+        <div class="grid">
+          <div class="card signal-card">
+            <h3><i class="fas fa-bolt"></i> Live Signals</h3>
+            <div class="signal">
+              <div><strong>XAUUSD</strong> <span class="
