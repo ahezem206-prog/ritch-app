@@ -4,9 +4,10 @@ const USERS = {
   "ritch": "vip2026"
 };
 
+// Demo videos - you can replace these links with your own
 let VIDEOS = [
-  { title: "XAUUSD Analysis Today", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", date: "2026-04-25" },
-  { title: "BTCUSD Live Trade", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", date: "2026-04-24" }
+  { title: "XAUUSD Analysis Today", url: "https://www.youtube.com/watch?v=jfKfPfyJRdk", date: "2026-04-25" },
+  { title: "BTCUSD Live Trade Setup", url: "https://www.youtube.com/watch?v=DWcJFNfaw9c", date: "2026-04-24" }
 ];
 
 function showLogin() {
@@ -79,7 +80,7 @@ function showApp() {
           <div class="card">
             <h3><i class="fas fa-broadcast-tower"></i> Live Stream</h3>
             <p>Status: <span style="color:#00ff88">Online Now</span></p>
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
             <button class="btn" onclick="window.open('https://t.me/', '_blank')">Join Telegram Group</button>
           </div>
 
@@ -123,9 +124,14 @@ function renderVideos() {
 
 function addVideo() {
   const title = prompt("Video Title:");
-  const url = prompt("YouTube Embed URL:");
+  const url = prompt("YouTube URL - paste normal link:");
   if (title && url) {
-    VIDEOS.unshift({ title, url, date: new Date().toISOString().split('T')[0] });
+    // Convert normal YouTube URL to embed
+    let embedUrl = url;
+    if(url.includes("watch?v=")) {
+      embedUrl = url.replace("watch?v=", "embed/");
+    }
+    VIDEOS.unshift({ title, url: embedUrl, date: new Date().toISOString().split('T')[0] });
     renderVideos();
     alert("Posted - Note: Will reset on page refresh because site is static");
   }
